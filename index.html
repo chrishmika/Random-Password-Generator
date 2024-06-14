@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <span class="mainTitle">Password Generator . . . </span>
+      <br />
+      <input type="text" class="passwordOut" readonly />
+      <br />
+
+      <input type="radio" name="charVarient" value="useCapital" class="useCapital" />
+      <label for class="useCapital">Capital</label>
+
+      <input type="radio" name="charVarient" value="UseSimple" class="UseSimple" checked />
+      <label for class="UseSimple">Simple</label>
+
+      <input type="radio" name="charVarient" value="UseMix" class="useMix" />
+      <label for class="useMix">Mix Charactor</label>
+
+      <br />
+      <input type="number" class="passwordLength" min="2" max="25" />
+      <label for class="passwordLength">Length</label>
+      <!-- <br /> -->
+
+      <button class="generateBtn" onclick="generatePsw()">Generate</button>
+    </div>
+  </body>
+</html>

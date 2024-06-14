@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: large;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.container {
+  display: flexbox;
+  position: absolute;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: aquamarine;
+  backdrop-filter: blur(30%);
+}
+
+.mainTitle {
+  font-size: 35px;
+}
+
+input.passwordOut,
+input.passwordLength {
+  border-radius: 20px;
+  margin: 10px 0;
+  padding: 15px;
+  outline: none;
+}
+
+.passwordOut {
+  width: 350px;
+  height: 70px;
+}
+
+input[type="radio"] {
+  margin: 10px;
+  padding: 5px;
+}
+input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -5px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"]:checked::after {
+  background-color: orange;
+}
+
+label.UseSimple,
+label.useCapital,
+label.UseMix {
+  margin-right: 7px;
+  padding: 0px;
+}
+
+.passwordLength {
+  width: 70px;
+  height: 50px;
+  margin: 10px;
+}
+
+.generateBtn {
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: black;
+  height: 50px;
+  padding: 15px;
+  float: right;
+  margin: 10px;
+}
+
+.generateBtn:hover {
+  color: white;
+  background-color: black;
+}
