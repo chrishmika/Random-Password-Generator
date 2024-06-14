@@ -62,9 +62,9 @@ input[type="radio"]:checked::after {
   background-color: orange;
 }
 
-label.UseSimple,
-label.useCapital,
-label.UseMix {
+label.useSimpleTxt,
+label.useCapitalTxt,
+label.useMixTxt {
   margin-right: 7px;
   padding: 0px;
 }
