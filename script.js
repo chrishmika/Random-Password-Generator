@@ -41,9 +41,6 @@ function generatePsw() {
   const charVarient = document.getElementsByName("charVarient");
   const charCount = capitalsChar.length;
   var newPassword = "";
-  //   for (const item of values) {
-  //     item.value = "";
-  //   }
 
   if (charLengthGiven > 25 || charLengthGiven < 2) {
     for (const item of values) {
@@ -59,7 +56,6 @@ function generatePsw() {
           }
           item.value = newPassword;
         }
-        console.log(item.value);
       } else if (item.checked && item.value == "useCapital") {
         for (const item of values) {
           while (charLengthGiven > 0) {
@@ -68,20 +64,22 @@ function generatePsw() {
           }
           item.value = newPassword;
         }
-        console.log(item.value);
       } else if (item.checked && item.value == "useMix") {
         for (const item of values) {
-          item.value = "";
+          while (charLengthGiven > 0) {
+            if (Math.floor((Math.random() * 10) % 2) == 0) {
+              newPassword = newPassword + capitalsChar[Math.floor(Math.random() * 100) % charCount];
+              charLengthGiven = charLengthGiven - 1;
+            } else {
+              newPassword = newPassword + capitalsChar[Math.floor(Math.random() * 100) % charCount].toLowerCase();
+              charLengthGiven = charLengthGiven - 1;
+            }
+          }
+          item.value = newPassword;
         }
-        console.log(item.value);
       }
     });
   }
 }
 
-// const charCount = capitalsChar.length;
-// console.log(charCount);
-
-// console.log(capitalsChar[Math.floor(Math.random() * 100) % charCount]);
-// console.log(capitalsChar[Math.floor(Math.random() * 100) % charCount].toLowerCase());
 // console.log(Math.floor(Math.random() * 100) % 26);
