@@ -36,11 +36,11 @@ const capitalsChar = [
 ];
 
 function generatePsw() {
+  var newPassword = "";
   var charLengthGiven = Number(document.getElementsByClassName("passwordLength")[0].value);
   const values = document.getElementsByClassName("passwordOut");
   const charVarient = document.getElementsByName("charVarient");
   const charCount = capitalsChar.length;
-  var newPassword = "";
 
   if (charLengthGiven > 25 || charLengthGiven < 2) {
     for (const item of values) {
@@ -48,6 +48,7 @@ function generatePsw() {
     }
   } else {
     charVarient.forEach((item) => {
+      //for simple letter is checked
       if (item.checked && item.value == "useSimple") {
         for (const item of values) {
           while (charLengthGiven > 0) {
@@ -57,6 +58,7 @@ function generatePsw() {
           item.value = newPassword;
         }
       } else if (item.checked && item.value == "useCapital") {
+        //for capital letter is checked
         for (const item of values) {
           while (charLengthGiven > 0) {
             newPassword = newPassword + capitalsChar[Math.floor(Math.random() * 100) % charCount];
@@ -65,6 +67,7 @@ function generatePsw() {
           item.value = newPassword;
         }
       } else if (item.checked && item.value == "useMix") {
+        //for mix letter is checked
         for (const item of values) {
           while (charLengthGiven > 0) {
             if (Math.floor((Math.random() * 10) % 2) == 0) {
